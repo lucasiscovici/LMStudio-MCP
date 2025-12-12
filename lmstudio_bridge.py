@@ -4,12 +4,12 @@ import requests
 import json
 import sys
 from typing import List, Dict, Any, Optional
-
+import os
 # Initialize FastMCP server
 mcp = FastMCP("lmstudio-bridge")
 
 # LM Studio settings
-LMSTUDIO_API_BASE = "http://localhost:1234/v1"
+LMSTUDIO_API_BASE = os.getenv("LMSTUDIO_API_BASE", "http://localhost:1234/v1")
 DEFAULT_MODEL = "default"  # Will be replaced with whatever model is currently loaded
 
 def log_error(message: str):
